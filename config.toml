@@ -2,7 +2,6 @@ baseURL = "https://mkk.schuetze.ag/"
 languageCode = "de-de"
 title = "Schütze AG"
 theme = "elate"
-publishDir = "docs"
 
 [params]
   author = "Schütze AG"
