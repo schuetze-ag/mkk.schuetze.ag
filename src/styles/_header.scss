@@ -1,19 +1,30 @@
 .header {
   position: relative;
-  background: transparent url(../images/title.jpg) center center;
-  background-size: cover;
   height: 900px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  overflow: hidden;
+
+  @media (max-width: 1340px) {
+    height: 67vw;
+  }
+}
+
+.header__background {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
 }
 
 .header__content {
-  display: inline-block;
-  position: relative;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 262px;
+  padding-right: 131px;
   z-index: 2;
   color: $black;
-  padding: $spacer * 3 $spacer * 6 $spacer * 3 0;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
 
   h1 {
     font-size: 3rem;
@@ -40,8 +51,8 @@
     left: -5000px;
     right: 0;
     z-index: -1;
-    border-top-right-radius: $spacer * 6;
-    border-bottom-right-radius: $spacer * 6;
+    border-top-right-radius: 131px;
+    border-bottom-right-radius: 131px;
   }
 }
 

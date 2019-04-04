@@ -1,4 +1,33 @@
 <header class="header">
+  <picture>
+    <source
+      media="(max-width: 991px)"
+      srcset="./images/title-991.webp"
+      type="image/webp"
+    />
+    <source
+      media="(min-width: 992px)"
+      srcset="./images/title-2000.webp"
+      type="image/webp"
+    />
+    <source
+      media="(max-width: 991px)"
+      srcset="./images/title-991.jpg"
+      type="image/jpeg"
+    />
+    <source
+      media="(min-width: 992px)"
+      srcset="./images/title-2000.jpg"
+      type="image/jpeg"
+    />
+    <img
+      src="./images/title-2000.jpg"
+      type="image/jpeg"
+      alt=""
+      aria-hidden="true"
+      class="header__background"
+    />
+  </picture>
   <div class="header__logo" transclude>./images/logo.svg</div>
   <div class="container">
     <div class="header__content">

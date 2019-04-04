@@ -9,17 +9,18 @@
     min-height: 300px;
     padding: $spacer * 2;
     box-shadow: 7px 14px 42px 3px rgba(163, 174, 184, 0.4);
+    margin-bottom: $spacer * 3;
   }
 
   .card-icon {
-    font-size: 2rem;
+    font-size: 3rem;
   }
 
   .card-title {
     margin-top: 1rem;
     font-size: 24px;
     font-weight: 400;
-    line-height: 1;
+    line-height: 1.25;
 
     small {
       color: $gray-600;

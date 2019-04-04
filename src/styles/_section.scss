@@ -29,7 +29,9 @@ section {
     }
 
     p {
-      padding: 0 $spacer * 10;
+      @include media-breakpoint-up(lg) {
+        padding: 0 $spacer * 10;
+      }
     }
   }
 }

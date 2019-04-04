@@ -5,9 +5,7 @@ $schuetze-rot: #b11008;
 $schuetze-grau: #6b5c59;
 $schuetze-blau: #175874;
 
-$font-family-sans-serif: Montserrat, Helvetica, Arial, sans-serif;
-
-@import '../../node_modules/bootstrap/scss/bootstrap';
+@import 'bootstrap';
 @import 'slant';
 @import 'section';
 @import 'icon';

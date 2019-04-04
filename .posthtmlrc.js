@@ -8,7 +8,9 @@ const root = __dirname + '/src'
 
 module.exports = {
   plugins: {
-    'posthtml-include': { root },
+    'posthtml-include': {
+      root,
+    },
     'posthtml-content': {
       transclude: src => readFile(path.resolve(root, src), 'utf-8'),
     },
