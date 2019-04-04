@@ -15,7 +15,7 @@ echo "Removing existing files"
 rm -rf public/*
 
 echo "Generating site"
-hugo
+npm run build
 
 echo "Updating gh-pages branch"
 cd public

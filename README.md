@@ -4,28 +4,28 @@ Dies ist die Landingpage der Schütze AG für den Main-Kinzig-Kreis.
 
 ## Installation
 
-Du benötigst eine Installation von [git](https://git-scm.com/).
+Du benötigst:
 
-Installiere Hugo:
-
-- Lade dir das [neueste Release](https://github.com/gohugoio/hugo/releases) für dein Betriebssystem herunter.
-- Entpacke das Archiv und sorge dafür, dass `hugo` in deinem Pfad ist.
+- [git](https://git-scm.com/)
+- [Node.js](https://nodejs.org/en/download/)
 
 Klone dieses Repository:
 
 ```bash
 git clone https://github.com/schuetze-ag/mkk.schuetze.ag.git
+cd mkk.schuetze.ag
+npm install
 ```
 
 ## Entwickeln
 
-Starte den Hugo-Server:
+Starte den Entwicklungs-Server:
 
 ```bash
-hugo server -D
+npm start
 ```
 
-Du kannst die Seite jetzt unter http://localhost:1313/ ansehen. Änderungen an der Seite werden automatisch im Browser angezeigt.
+Du kannst die Seite jetzt unter http://localhost:1234/ ansehen. Änderungen an der Seite werden automatisch im Browser angezeigt.
 
 ## Deployment
 
