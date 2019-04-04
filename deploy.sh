@@ -16,6 +16,7 @@ rm -rf public/*
 
 echo "Generating site"
 npm run build
+echo 'mkk.schuetze.ag' > public/CNAME
 
 echo "Updating gh-pages branch"
 cd public

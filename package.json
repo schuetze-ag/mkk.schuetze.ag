@@ -7,12 +7,11 @@
     "bootstrap": "^4.3.1",
     "normalize-scss": "^7.0.1",
     "parcel-bundler": "^1.11.0",
-    "parcel-plugin-inlinesvg": "^0.1.0",
     "posthtml-include": "^1.2.0",
     "sass": "^1.16.1"
   },
   "scripts": {
-    "start": "parcel serve src/index.html",
+    "start": "parcel serve --out-dir public src/index.html",
     "build": "parcel build --out-dir public src/index.html"
   }
 }
