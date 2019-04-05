@@ -1,10 +1,13 @@
 const path = require('path');
+const glob = require('glob');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const TerserJSPlugin = require('terser-webpack-plugin');
 const HtmlWebpackInlineSVGPlugin = require('html-webpack-inline-svg-plugin');
+const ImageminPlugin = require('imagemin-webpack-plugin').default;
+const ImageminMozJpeg = require('imagemin-mozjpeg');
 
 module.exports = (_, { mode }) => {
   const prod = mode === 'production';
@@ -41,12 +44,6 @@ module.exports = (_, { mode }) => {
       ],
     },
     plugins: [
-      new CopyWebpackPlugin([
-        {
-          from: './static',
-          to: './static',
-        },
-      ]),
       new HtmlWebpackPlugin({
         template: 'src/index.ejs',
         chunks: ['styles'],
@@ -57,6 +54,24 @@ module.exports = (_, { mode }) => {
       new MiniCssExtractPlugin({
         filename: prod ? '[name].[contenthash].css' : '[name].css',
         chunkFilename: prod ? '[id].[contenthash].css' : '[id].css',
+      }),
+      new CopyWebpackPlugin([
+        {
+          from: './static',
+          to: './static',
+          test: /\.ico$|^process\.svg$/,
+        },
+      ]),
+      new ImageminPlugin({
+        test: /\.(jpe?g|png|webp)$/i,
+        webp: { quality: 80 },
+        plugins: [ImageminMozJpeg({ progressive: true, quality: 80 })],
+        externalImages: {
+          context: './static',
+          sources: glob.sync('static/**/*.{jpg,png,webp}'),
+          destination: './public/static',
+          fileName: '[path][name].[ext]',
+        },
       }),
     ],
     devServer: {
