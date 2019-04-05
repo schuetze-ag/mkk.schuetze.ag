@@ -52,3 +52,14 @@ Deploye deine Änderungen:
 ```bash
 ./deploy.sh
 ```
+
+## Docker
+
+Du kannst ein Docker-Image bauen:
+
+```bash
+./docker.sh
+docker run --name mkk.schuetze.ag -p 5000:80 mkk-schuetze-ag
+```
+
+Die Seite läuft dann unter http://localhost:5000/.
