@@ -25,7 +25,17 @@ Starte den Entwicklungs-Server:
 npm start
 ```
 
-Du kannst die Seite jetzt unter http://localhost:1234/ ansehen. Änderungen an der Seite werden automatisch im Browser angezeigt.
+Du kannst die Seite jetzt unter http://localhost:3000/ ansehen. Änderungen an der Seite werden automatisch im Browser angezeigt.
+
+## Bauen
+
+```bash
+rm -rf public
+npm run build
+npm run serve
+```
+
+Du kannst die fertig gebaute Seite unter http://localhost:5000/ ansehen.
 
 ## Deployment
 

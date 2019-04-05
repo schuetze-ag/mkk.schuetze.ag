@@ -4,21 +4,33 @@
   "private": true,
   "homepage": "https://mkk.schuetze.ag/",
   "devDependencies": {
+    "autoprefixer": "^9.5.0",
     "bootstrap": "^4.3.1",
-    "normalize-scss": "^7.0.1",
-    "parcel-bundler": "^1.11.0",
-    "parcel-plugin-imagemin": "^2.1.3",
-    "parcel-plugin-purifycss": "^1.0.5",
-    "posthtml-content": "0.0.2",
-    "posthtml-include": "^1.2.0",
-    "posthtml-inline-assets": "^3.0.0",
-    "sass": "^1.16.1",
+    "copy-webpack-plugin": "^5.0.2",
+    "css-loader": "^2.1.1",
+    "ejs": "^2.6.1",
+    "ejs-compiled-loader": "^1.1.0",
+    "html-webpack-inline-svg-plugin": "zmrhaljiri/html-webpack-inline-svg-plugin#issue-15-keeping-the-class-assigned",
+    "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.5.0",
+    "node-sass": "^4.11.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.1",
+    "postcss-loader": "^3.0.0",
+    "sass-loader": "^7.1.0",
     "serve": "^11.0.0",
-    "svgo": "^1.2.0"
+    "style-loader": "^0.23.1",
+    "terser-webpack-plugin": "^1.2.3",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0",
+    "webpack-dev-server": "^3.2.1"
   },
   "scripts": {
-    "start": "parcel serve --out-dir public src/index.html",
-    "build": "parcel build --out-dir public src/index.html",
-    "serve": "serve public"
-  }
+    "start": "webpack-dev-server",
+    "build": "webpack --mode production",
+    "serve": "serve -d public"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ]
 }
