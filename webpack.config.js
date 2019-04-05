@@ -4,6 +4,8 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const HTMLInlineCSSWebpackPlugin = require('html-inline-css-webpack-plugin')
+  .default;
 const TerserJSPlugin = require('terser-webpack-plugin');
 const HtmlWebpackInlineSVGPlugin = require('html-webpack-inline-svg-plugin');
 const ImageminPlugin = require('imagemin-webpack-plugin').default;
@@ -19,9 +21,7 @@ module.exports = (_, { mode }) => {
     : {};
 
   return {
-    entry: {
-      styles: './src/styles/styles.scss',
-    },
+    entry: './src/index.js',
     output: {
       path: path.resolve(__dirname, 'public'),
       filename: prod ? '[name].[contenthash].js' : '[name].js',
@@ -46,7 +46,7 @@ module.exports = (_, { mode }) => {
     plugins: [
       new HtmlWebpackPlugin({
         template: 'src/index.ejs',
-        chunks: ['styles'],
+        chunks: prod ? [] : ['main'],
       }),
       new HtmlWebpackInlineSVGPlugin({
         runPreEmit: true,
@@ -55,6 +55,7 @@ module.exports = (_, { mode }) => {
         filename: prod ? '[name].[contenthash].css' : '[name].css',
         chunkFilename: prod ? '[id].[contenthash].css' : '[id].css',
       }),
+      new HTMLInlineCSSWebpackPlugin(),
       new CopyWebpackPlugin([
         {
           from: './static',
