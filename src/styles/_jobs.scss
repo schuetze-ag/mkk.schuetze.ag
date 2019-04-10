@@ -20,6 +20,11 @@
     font-size: 3rem;
   }
 
+  .card-body {
+    display: flex;
+    flex-direction: column;
+  }
+
   .card-title {
     margin-top: 1rem;
     font-size: 24px;
@@ -33,10 +38,11 @@
 
   .card-text {
     color: $gray-600;
+    margin-bottom: $spacer * 2;
   }
 
   .btn {
-    margin-top: $spacer;
+    margin-top: auto;
   }
 
   .card-blue {
