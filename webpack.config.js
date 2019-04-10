@@ -10,6 +10,7 @@ const TerserJSPlugin = require('terser-webpack-plugin');
 const HtmlWebpackInlineSVGPlugin = require('html-webpack-inline-svg-plugin');
 const ImageminPlugin = require('imagemin-webpack-plugin').default;
 const ImageminMozJpeg = require('imagemin-mozjpeg');
+const ImageminWebp = require('imagemin-webp');
 
 module.exports = (_, { mode }) => {
   const prod = mode === 'production';
@@ -65,8 +66,10 @@ module.exports = (_, { mode }) => {
       ]),
       new ImageminPlugin({
         test: /\.(jpe?g|png|webp)$/i,
-        webp: { quality: 80 },
-        plugins: [ImageminMozJpeg({ progressive: true, quality: 80 })],
+        plugins: [
+          ImageminMozJpeg({ progressive: true, quality: 70 }),
+          ImageminWebp({ quality: 70 }),
+        ],
         externalImages: {
           context: './static',
           sources: glob.sync('static/**/*.{jpg,png,webp}'),
