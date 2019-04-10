@@ -2,6 +2,7 @@ const path = require('path');
 const glob = require('glob');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const HTMLInlineCSSWebpackPlugin = require('html-inline-css-webpack-plugin')
@@ -31,7 +32,7 @@ module.exports = (_, { mode }) => {
       rules: [
         {
           test: /\.ejs$/,
-          loader: 'ejs-compiled-loader',
+          loader: 'ejs-webpack-loader',
         },
         {
           test: /\.scss$/,
@@ -59,9 +60,13 @@ module.exports = (_, { mode }) => {
     plugins: [
       new HtmlWebpackPlugin({
         template: 'src/index.ejs',
+        inject: 'head',
       }),
       new HtmlWebpackInlineSVGPlugin({
         runPreEmit: true,
+      }),
+      new ScriptExtHtmlWebpackPlugin({
+        defaultAttribute: 'defer',
       }),
       new MiniCssExtractPlugin({
         filename: prod ? '[name].[contenthash].css' : '[name].css',
