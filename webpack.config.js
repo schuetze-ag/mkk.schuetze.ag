@@ -42,6 +42,18 @@ module.exports = (_, { mode }) => {
             'sass-loader',
           ],
         },
+        {
+          test: /\.woff2?$/,
+          loader: 'file-loader',
+        },
+        {
+          test: /\.js$/,
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env'],
+            plugins: ['@babel/plugin-transform-spread'],
+          },
+        },
       ],
     },
     plugins: [

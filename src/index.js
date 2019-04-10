@@ -1,2 +1,2 @@
-require('./styles/styles.scss');
-require('bootstrap/js/src/modal.js');
+import './styles/styles.scss';
+import 'bootstrap/js/src/modal.js';
