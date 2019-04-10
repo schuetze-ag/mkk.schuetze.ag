@@ -4,10 +4,6 @@
   margin-top: -150px;
   z-index: 10;
 
-  header {
-    @include sr-only;
-  }
-
   .card {
     text-align: center;
     min-height: 300px;
