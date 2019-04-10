@@ -1,7 +1,10 @@
+body {
+  overflow-x: hidden;
+}
+
 @import 'fonts';
 @import 'variables';
 @import 'bootstrap';
-@import 'slant';
 @import 'section';
 @import 'icon';
 @import 'header';

@@ -6,6 +6,19 @@
   @media (max-width: 1340px) {
     height: 67vw;
   }
+
+  &:after {
+    position: absolute;
+    transform: rotate(-1.7deg);
+    background-color: $white;
+    content: '';
+    z-index: 3;
+    display: inline-block;
+    height: 70px;
+    padding: 0;
+    width: 101%;
+    bottom: -35px;
+  }
 }
 
 .header__background {
