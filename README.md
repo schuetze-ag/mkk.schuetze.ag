@@ -37,6 +37,14 @@ npm run serve
 
 Du kannst die fertig gebaute Seite unter http://localhost:5000/ ansehen.
 
+## Deployment auf Stage
+
+```bash
+./stage.sh
+```
+
+Die Seite läuft unter http://docker-host1:6009/
+
 ## Deployment
 
 Committe deine Änderungen:

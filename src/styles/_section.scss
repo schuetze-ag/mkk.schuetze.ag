@@ -80,50 +80,24 @@ section {
   }
 }
 
-.section-blue {
+@mixin section-variant($color) {
   &.section-dark {
-    background: $schuetze-blau;
+    background: $color;
   }
 
   h2 {
     &:after {
-      background: $schuetze-blau;
+      background: $color;
     }
   }
 
   a {
-    color: $schuetze-blau;
+    color: $color;
   }
 }
 
-.section-red {
-  &.section-dark {
-    background: $schuetze-rot;
-  }
-
-  h2 {
-    &:after {
-      background: $schuetze-rot;
-    }
-  }
-
-  a {
-    color: $schuetze-rot;
-  }
-}
-
-.section-gray {
-  &.section-dark {
-    background: $schuetze-grau;
-  }
-
-  h2 {
-    &:after {
-      background: $schuetze-grau;
-    }
-  }
-
-  a {
-    color: $schuetze-grau;
+@each $color, $value in $color-variants {
+  .section-#{$color} {
+    @include section-variant($value);
   }
 }

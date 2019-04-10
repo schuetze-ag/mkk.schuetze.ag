@@ -6,4 +6,3 @@ rm -rf public
 npm run build
 
 docker build --tag mkk-schuetze-ag .
-

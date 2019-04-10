@@ -5,15 +5,12 @@
   z-index: 10;
 
   .card {
+    position: relative;
     text-align: center;
     min-height: 300px;
     padding: $spacer * 2;
     box-shadow: 7px 14px 42px 3px rgba(163, 174, 184, 0.4);
     margin-bottom: $spacer * 3;
-  }
-
-  .card-icon {
-    font-size: 3rem;
   }
 
   .card-body {
@@ -37,40 +34,97 @@
     margin-bottom: $spacer * 2;
   }
 
-  .btn {
+  .btn-primary {
     margin-top: auto;
   }
+}
 
-  .card-blue {
-    .card-icon {
-      color: $schuetze-blau;
-    }
+.job-icon {
+  font-size: 3rem;
+}
 
-    .btn {
-      background-color: $schuetze-blau;
-      border-color: $schuetze-blau;
-    }
-  }
+.job-modal {
+  .modal-dialog {
+    width: calc(100% - 1rem);
+    max-width: 1000px;
 
-  .card-red {
-    .card-icon {
-      color: $schuetze-rot;
-    }
-
-    .btn {
-      background-color: $schuetze-rot;
-      border-color: $schuetze-rot;
+    @include media-breakpoint-up(sm) {
+      width: calc(100% - 3.5rem);
     }
   }
 
-  .card-grey {
-    .card-icon {
-      color: $schuetze-grau;
-    }
+  .modal-content {
+    height: 100%;
+  }
 
-    .btn {
-      background-color: $schuetze-grau;
-      border-color: $schuetze-grau;
+  .modal-header {
+    border: none;
+  }
+
+  .modal-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+    text-align: center;
+    padding-top: 1rem;
+
+    small {
+      color: $gray-600;
     }
+  }
+
+  .modal-body {
+    padding: 2rem;
+  }
+
+  .job-icon {
+    margin-bottom: 1rem;
+  }
+
+  .lead {
+    color: white;
+    margin: -1rem -2rem 2rem;
+    padding: 2rem;
+  }
+
+  h4 {
+    margin-top: 2rem;
+  }
+
+  ul {
+    padding-left: 1.5rem;
+  }
+
+  li {
+    margin-bottom: 0.5rem;
+  }
+
+  .contact {
+    margin-top: 2rem;
+    justify-content: start;
+  }
+}
+
+@mixin job-variant($color) {
+  a,
+  .job-icon {
+    color: $color;
+  }
+
+  .btn-primary {
+    @include button-variant($color, $color);
+  }
+
+  &.job-modal {
+    .lead {
+      background: $color;
+    }
+  }
+}
+
+@each $color, $value in $color-variants {
+  .job-#{$color} {
+    @include job-variant($value);
   }
 }

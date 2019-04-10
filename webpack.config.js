@@ -47,7 +47,6 @@ module.exports = (_, { mode }) => {
     plugins: [
       new HtmlWebpackPlugin({
         template: 'src/index.ejs',
-        chunks: prod ? [] : ['main'],
       }),
       new HtmlWebpackInlineSVGPlugin({
         runPreEmit: true,

@@ -21,39 +21,6 @@
   }
 }
 
-.quote-blue {
-  blockquote {
-    background: $schuetze-blau;
-    color: $white;
-
-    &:after {
-      border-top-color: $schuetze-blau;
-    }
-  }
-}
-
-.quote-gray {
-  blockquote {
-    background: $schuetze-grau;
-    color: $white;
-
-    &:after {
-      border-top-color: $schuetze-grau;
-    }
-  }
-}
-
-.quote-red {
-  blockquote {
-    background: $schuetze-rot;
-    color: $white;
-
-    &:after {
-      border-top-color: $schuetze-rot;
-    }
-  }
-}
-
 .author {
   display: flex;
   align-items: center;
@@ -72,5 +39,18 @@
 
   small {
     color: $gray-600;
+  }
+}
+
+@each $color, $value in $color-variants {
+  .quote-#{$color} {
+    blockquote {
+      background: $value;
+      color: $white;
+
+      &:after {
+        border-top-color: $value;
+      }
+    }
   }
 }
