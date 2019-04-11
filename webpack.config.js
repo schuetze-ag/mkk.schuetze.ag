@@ -83,8 +83,8 @@ module.exports = (_, { mode }) => {
       new ImageminPlugin({
         test: /\.(jpe?g|png|webp)$/i,
         plugins: [
-          ImageminMozJpeg({ progressive: true, quality: 70 }),
-          ImageminWebp({ quality: 70 }),
+          ImageminMozJpeg({ progressive: true, quality: 80 }),
+          ImageminWebp({ quality: 80 }),
         ],
         externalImages: {
           context: './static',
