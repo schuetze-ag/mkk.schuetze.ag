@@ -1,40 +1,42 @@
-<header class="header">
-  <picture>
-    <source
-      media="(max-width: 991px)"
-      srcset="static/title-991.webp"
-      type="image/webp"
-    />
-    <source
-      media="(min-width: 992px)"
-      srcset="static/title-2000.webp"
-      type="image/webp"
-    />
-    <source
-      media="(max-width: 991px)"
-      srcset="static/title-991.jpg"
-      type="image/jpeg"
-    />
-    <source
-      media="(min-width: 992px)"
-      srcset="static/title-2000.jpg"
-      type="image/jpeg"
-    />
-    <img
-      src="static/title-2000.jpg"
-      type="image/jpeg"
-      alt=""
-      aria-hidden="true"
-      class="header__background"
-    />
-  </picture>
-  <img inline src="static/logo.svg" class="header__logo" alt="Schütze AG" />
-  <div class="container">
-    <div class="header__content">
-      <h1>
-        Bei uns<br />gestaltest du <strong>IT</strong>
-        <small>und kannst radeln statt pendeln.</small>
-      </h1>
+<header class="header" id="top">
+  <% include nav %>
+  <div class="banner">
+    <picture>
+      <source
+        media="(max-width: 991px)"
+        srcset="static/title-991.webp"
+        type="image/webp"
+      />
+      <source
+        media="(min-width: 992px)"
+        srcset="static/title-2000.webp"
+        type="image/webp"
+      />
+      <source
+        media="(max-width: 991px)"
+        srcset="static/title-991.jpg"
+        type="image/jpeg"
+      />
+      <source
+        media="(min-width: 992px)"
+        srcset="static/title-2000.jpg"
+        type="image/jpeg"
+      />
+      <img
+        src="static/title-2000.jpg"
+        type="image/jpeg"
+        alt=""
+        aria-hidden="true"
+        class="header__background"
+      />
+    </picture>
+    <div class="container">
+      <div class="header__content">
+        <h1>
+          Bei uns<br />gestaltest du <strong>IT</strong>
+          <small>und kannst radeln statt pendeln.</small>
+        </h1>
+      </div>
     </div>
   </div>
 </header>

@@ -1,7 +1,7 @@
 .jobs {
   position: relative;
   bottom: 0;
-  margin-top: -150px;
+  margin-top: -200px;
   z-index: 10;
 
   .card {
@@ -9,9 +9,9 @@
     text-align: center;
     min-height: 300px;
     padding: $spacer * 2;
-    box-shadow: 7px 14px 42px 3px rgba(163, 174, 184, 0.4);
     margin-bottom: $spacer * 3;
     border: none;
+    box-shadow: $box-shadow;
   }
 
   .card-body {
@@ -41,7 +41,7 @@
 }
 
 .job-icon {
-  font-size: 3rem;
+  font-size: 5rem;
 }
 
 .job-modal {
@@ -79,14 +79,10 @@
     padding: 2rem;
   }
 
-  .job-icon {
-    margin-bottom: 1rem;
-  }
-
   .lead {
-    color: white;
     margin: -1rem -2rem 2rem;
     padding: 2rem;
+    background-color: $primary;
   }
 
   h4 {
@@ -104,28 +100,5 @@
   .contact-header {
     text-align: center;
     margin-bottom: 2rem;
-  }
-}
-
-@mixin job-variant($color) {
-  a,
-  .job-icon {
-    color: $color;
-  }
-
-  .btn-primary {
-    @include button-variant($color, $color);
-  }
-
-  &.job-modal {
-    .lead {
-      background: $color;
-    }
-  }
-}
-
-@each $color, $value in $color-variants {
-  .job-#{$color} {
-    @include job-variant($value);
   }
 }
