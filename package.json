@@ -5,9 +5,7 @@
   "homepage": "https://mkk.schuetze.ag/",
   "dependencies": {
     "bootstrap": "^4.3.1",
-    "jquery": "^3.3.1",
-    "jquery-countto": "^1.2.0",
-    "waypoints": "^4.0.1"
+    "cash-dom": "^3.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.4.3",
