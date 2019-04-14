@@ -71,3 +71,11 @@ docker run --name mkk.schuetze.ag -p 5000:80 mkk-schuetze-ag
 ```
 
 Die Seite läuft dann unter http://localhost:5000/.
+
+## Scripts
+
+Alle SVGs optimieren und dabei die verwendeten CSS-Klassen inlinen:
+
+```bash
+npx svgo -f static -r --enable inlineStyles --config '{ "plugins": [ { "inlineStyles": { "onlyMatchedOnce": false } }] }'
+```
