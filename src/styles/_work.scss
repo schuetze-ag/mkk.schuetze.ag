@@ -1,7 +1,5 @@
 .work {
-  .card {
-    min-width: 20rem;
-    margin-bottom: $spacer * 2;
-    border: none;
+  figcaption {
+    @include sr-only;
   }
 }
