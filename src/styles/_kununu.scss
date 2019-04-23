@@ -1,0 +1,11 @@
+.kununu-badges {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: $spacer * 2;
+
+  img {
+    height: 6rem;
+    margin: 0 $spacer/2 $spacer;
+  }
+}
