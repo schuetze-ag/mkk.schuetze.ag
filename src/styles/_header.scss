@@ -54,11 +54,11 @@
       height: 100%;
       padding: 0 $spacer;
       color: $gray-700;
-      font-weight: 600;
       transition: background-color 300ms linear;
 
       &:hover {
-        background-color: lighten($primary, 30);
+        font-weight: 600;
+        text-decoration: none;
       }
     }
   }
