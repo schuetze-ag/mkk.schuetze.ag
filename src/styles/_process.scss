@@ -1,0 +1,9 @@
+.process {
+  img {
+    max-width: 20rem;
+
+    @include media-breakpoint-up(lg) {
+      max-width: 100%;
+    }
+  }
+}
