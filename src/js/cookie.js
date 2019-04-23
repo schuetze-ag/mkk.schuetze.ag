@@ -6,7 +6,6 @@ const property = 'UA-129209124-6';
 const pageLoadedAt = new Date();
 
 const consent = getCookieConsent();
-console.log('cookie consent:', consent);
 
 if (consent === true) {
   initializeAnalytics();
@@ -20,8 +19,6 @@ function getCookieConsent() {
 }
 
 function initializeAnalytics() {
-  console.log('initialize analytics');
-
   const t = document.createElement('script');
   t.src = `https://www.googletagmanager.com/gtag/js?id=${property}`;
   document.getElementsByTagName('head')[0].appendChild(t);
@@ -42,14 +39,12 @@ function showCookieBanner() {
 }
 
 function acceptCookies() {
-  console.log('cookies accepted');
   document.cookie = `${cookieName}=true`;
   hideCookieBanner();
   initializeAnalytics();
 }
 
 function rejectCookies() {
-  console.log('cookies rejected');
   document.cookie = `${cookieName}=false`;
   hideCookieBanner();
 }
