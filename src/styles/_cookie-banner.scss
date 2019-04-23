@@ -1,0 +1,37 @@
+.cookie-banner {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: $zindex-fixed;
+
+  &.show {
+    display: block;
+    opacity: 1;
+  }
+}
+
+.cookie-banner-content {
+  margin: 0 2 * $spacer;
+  background: $white;
+  padding: 2 * $spacer;
+
+  @include media-breakpoint-up(lg) {
+    width: 800px;
+    margin: 0 auto;
+    box-shadow: $box-shadow;
+  }
+
+  p {
+  }
+
+  .actions {
+    display: flex;
+    justify-content: center;
+  }
+
+  .btn {
+    margin: 0 $spacer;
+  }
+}
