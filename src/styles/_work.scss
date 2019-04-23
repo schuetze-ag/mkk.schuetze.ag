@@ -1,5 +1,16 @@
 .work {
+  figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  svg {
+    width: 5rem;
+  }
+
   figcaption {
-    @include sr-only;
+    color: $white;
+    margin-top: $spacer;
   }
 }

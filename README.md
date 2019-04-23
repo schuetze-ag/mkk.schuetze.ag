@@ -79,3 +79,22 @@ Alle SVGs optimieren und dabei die verwendeten CSS-Klassen inlinen:
 ```bash
 npx svgo -f static -r --enable inlineStyles --config '{ "plugins": [ { "inlineStyles": { "onlyMatchedOnce": false } }] }'
 ```
+
+Kopiere Benefits-SVGs (danach optimieren, s.o.)
+
+```bash
+mv static/benefits/Benefits-01.svg static/benefits/work-life-balance.svg
+mv static/benefits/Benefits-02.svg static/benefits/weiterbildung.svg
+mv static/benefits/Benefits-03.svg static/benefits/jobrad.svg
+mv static/benefits/Benefits-04.svg static/benefits/flexible-arbeitszeiten.svg
+mv static/benefits/Benefits-05.svg static/benefits/gestaltungsmoeglichkeiten.svg
+mv static/benefits/Benefits-06.svg static/benefits/vertrauenskultur.svg
+mv static/benefits/Benefits-07.svg static/benefits/sabbatical.svg
+mv static/benefits/Benefits-08.svg static/benefits/mitarbeiterevents.svg
+mv static/benefits/Benefits-09.svg static/benefits/fitnessstudio.svg
+mv static/benefits/Benefits-10.svg static/benefits/eigenstaendige-projekte.svg
+mv static/benefits/Benefits-11.svg static/benefits/transparenz.svg
+mv static/benefits/Benefits-12.svg static/benefits/elternzeit.svg
+
+npx svgo -f static/benefits -r --enable inlineStyles --config '{ "plugins": [ { "inlineStyles": { "onlyMatchedOnce": false } }] }'
+```
