@@ -24,14 +24,10 @@ var globalObject = window,
   content = 'content',
   target = 'target',
   // box model
-  offsetTop = 'offsetTop',
-  offsetLeft = 'offsetLeft',
   scrollTop = 'scrollTop',
   scrollLeft = 'scrollLeft',
   clientWidth = 'clientWidth',
-  clientHeight = 'clientHeight',
   offsetWidth = 'offsetWidth',
-  offsetHeight = 'offsetHeight',
   innerWidth = 'innerWidth',
   // aria
   ariaHidden = 'aria-hidden',
@@ -56,7 +52,6 @@ var globalObject = window,
   querySelectorAll = 'querySelectorAll',
   getElementsByCLASSNAME = 'getElementsByClassName',
   getComputedStyle = 'getComputedStyle',
-  indexOf = 'indexOf',
   parentNode = 'parentNode',
   length = 'length',
   toLowerCase = 'toLowerCase',
@@ -69,10 +64,6 @@ var globalObject = window,
   showClass = 'show',
   left = 'left',
   right = 'right',
-  top = 'top',
-  bottom = 'bottom',
-  // tooltip / popover
-  tipPositions = /\b(top|bottom|left|right)+/,
   // modal
   modalOverlay = 0,
   fixedTop = 'fixed-top',
@@ -156,14 +147,6 @@ var globalObject = window,
     );
     OriginalCustomEvent.relatedTarget = related;
     this.dispatchEvent(OriginalCustomEvent);
-  },
-  // tooltip / popover stuff
-  getScroll = function() {
-    // also Affix and ScrollSpy uses it
-    return {
-      y: globalObject.pageYOffset || HTML[scrollTop],
-      x: globalObject.pageXOffset || HTML[scrollLeft],
-    };
   };
 
 BSN.version = '2.0.26';
