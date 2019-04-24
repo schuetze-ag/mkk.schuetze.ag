@@ -32,9 +32,8 @@
   top: 0;
   left: 0;
   right: 0;
-  background: rgba(255, 255, 255, 0);
   z-index: $zindex-fixed;
-  transition: box-shadow 300ms linear, background 300ms linear;
+  background: rgba(255, 255, 255, 1);
 
   &.show {
     height: 100vh;
@@ -141,11 +140,12 @@
     font-size: 1rem;
   }
 
-  a {
+  .btn {
     margin-top: $spacer * 2;
     font-weight: 600;
     align-self: center;
     text-transform: uppercase;
+    color: $black;
   }
 
   &:before {
@@ -184,7 +184,7 @@
       font-size: 4rem;
     }
 
-    a {
+    .btn {
       display: none;
     }
 
@@ -197,6 +197,8 @@
 @include media-breakpoint-up(lg) {
   .nav {
     flex-direction: row;
+    background: rgba(255, 255, 255, 0);
+    transition: box-shadow 300ms linear, background 300ms linear;
   }
 
   .nav-header {
